@@ -386,7 +386,7 @@ def _validate_params_epacems(etl_params):
         epacems_dict['epacems_states'] = []
     # if states are All, then we grab all of the states from constants
     if epacems_dict['epacems_states']:
-        if epacems_dict['epacems_states'][0].lower() == 'all':
+        if list(epacems_dict['epacems_states'])[0].lower() == 'all':
             epacems_dict['epacems_states'] = pc.working_partitions['epacems']['states']
 
     # CEMS is ALWAYS going to be partitioned by year and state. This means we

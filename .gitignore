@@ -18,5 +18,7 @@ coverage.xml
 .coverage.*
 codecov.sh
 .env_pudl/
+.vscode/
 *wheel-metadata
 dask-worker-space*
+workspace.code-workspace

@@ -522,7 +522,7 @@ def validate_save_datapkg(datapkg_descriptor, datapkg_dir):
 
     """
     # Use that descriptor to instantiate a Package object
-    datapkg = datapackage.Package(datapkg_descriptor)
+    datapkg = datapackage.Package(list(datapkg_descriptor))
 
     # Validate the data package descriptor before we go to
     logger.info(
@@ -545,7 +545,7 @@ def validate_save_datapkg(datapkg_descriptor, datapkg_dir):
         goodtables_errors = ""
         for table in report["tables"]:
             if not table["valid"]:
-                goodtables_errors += str(table["source"])
+                goodtables_errors += str(table["path"])
                 goodtables_errors += str(table["errors"])
         raise ValueError(
             f"Data package data validation failed with goodtables. "
